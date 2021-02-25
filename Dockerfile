@@ -5,9 +5,9 @@ ARG CLEANUP_SCRIPT_LOCATION
 
 ADD $FIX_ALL_GOTCHAS_SCRIPT_LOCATION .
 ADD $CLEANUP_SCRIPT_LOCATION .
+ADD https://gitlab.com/shell-bootstrap-scripts/network-settings/-/blob/master/set_variables_in_CI.sh ./environment.sh
 
-RUN touch environment.sh \
-    && set -o allexport \
+RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
     && set -o errexit -o nounset \
