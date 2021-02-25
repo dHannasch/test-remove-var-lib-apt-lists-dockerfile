@@ -7,7 +7,6 @@ ADD $FIX_ALL_GOTCHAS_SCRIPT_LOCATION .
 ADD $CLEANUP_SCRIPT_LOCATION .
 
 RUN touch environment.sh \
-    && chmod u+rx ./fix_all_gotchas.sh \
     && set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
